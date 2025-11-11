@@ -22,26 +22,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(membloc, total_len);
 	return (membloc);
 }
-
-#include <stdio.h>          
-#include <stdlib.h>
-#include <assert.h>
-
-int main() {
-    
-    int	number;
-	int index;
-	int	*pointeur;
-
-	number = 10;
-	index = 0;
-    pointeur = (int *)ft_calloc(number, sizeof(int));
-    while (index < number)
-	{
-        printf("%d", pointeur[index]);
-		index++;
-    }
-    printf( "\n" );
-    free(pointeur);
-    return (0);
-}
