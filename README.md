@@ -15,7 +15,7 @@ The aim of this project was to help me understand how the libc library functions
 
 ## :key: Instructions
 
-To clone the directory, run `git clone https://github.com/Belladone-Bzz/C_library.git` then `cd C_library`in the terminal.
+To use the libft.a library, clone the directory with the command `git clone https://github.com/Belladone-Bzz/C_library.git` in the terminal then go in the directory with the command `cd C_library`.
 
 To compile the code, run `make`. This will create a library called libft.a.
 
