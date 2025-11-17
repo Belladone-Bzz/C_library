@@ -51,10 +51,18 @@ The library is accompanied by a header file called libft.h, which contains proto
 |ft_atoi|int	ft_atoi(const char *str)|The ft_atoi() function converts the initial portion of the string pointed to by str to int representation.|The ft_atoi function returns an integral number, represents int value. If the input string str is not a valid string's number, it returns 0.|
 |ft_calloc|void	*ft_calloc(size_t nmemb, size_t size)|The ft_calloc() function allocates memory for any data type. The allocated memory is filled with bytes of value zero.|If successful, ft_calloc() returns a pointer to allocated memory. If there is an error, it return a NULL pointer.|
 |ft_strdup|char	*ft_strdup(const char *s)|The ft-strdup() function allocates sufficient memory for a copy of the string s and does the copy.|ft_strdup() returns a pointer to the copy. If insufficient memory is available, NULL is returned.|
-|ft_substr|char	*ft_substr(const char *s, unsigned int start, size_t len)|Allocate (with malloc) and return a new string from the string s. This new string starts at index 'start' and has a maximum size of 'len'.|ft_substr() returns the new string; NULL if the memory allocation failed.|
-|ft_strjoin|char *ft_strjoin(const char *s1, const char *s2)|Allocate (with malloc) and returns a new string resulting from the concatenation of s1 and s2.|ft_strjoin() returns the new string; NULL if the memory allocation failed.|
-|ft_strtrim|char *ft_strtrim(const char *s1, const char *set)|Allocate (with malloc) and returns a copy of s1, without the characters specified in set at the beginning and the end of s1.|ft_strtrim() returns a trimmed copy of s1; NULL if the memory allocation failed.|
-|ft_split|char **ft_split(const char *s, char c)|Allocate (with malloc) and returns an array of strings obtained by splitting s with the character c, used as delimiter.|ft_split() returns an array of strings resulting from the splitting of s; NULL if the memory allocation failed.|
+|ft_substr|char	*ft_substr(const char *s, unsigned int start, size_t len)|Allocate (with malloc) and return a new string from the string s. This new string starts at index 'start' and has a maximum size of 'len'.|ft_substr() returns the new string and NULL if the memory allocation failed.|
+|ft_strjoin|char *ft_strjoin(const char *s1, const char *s2)|Allocate (with malloc) and returns a new string resulting from the concatenation of s1 and s2.|ft_strjoin() returns the new string and NULL if the memory allocation failed.|
+|ft_strtrim|char *ft_strtrim(const char *s1, const char *set)|Allocate (with malloc) and returns a copy of s1, without the characters specified in set at the beginning and the end of s1.|ft_strtrim() returns a trimmed copy of s1 and NULL if the memory allocation failed.|
+|ft_split|char **ft_split(const char *s, char c)|Allocate (with malloc) and returns an array of strings obtained by splitting s with the character c, used as delimiter.|ft_split() returns an array of strings resulting from the splitting of s and NULL if the memory allocation failed.|
+|ft_itoa|char *ft_itoa(int n)|Allocate (with malloc) and returns a string representing n. Negative numbers are handled.|ft_itoa() returns the string representing n and NULL if the memory allocation failed.|
+|ft_strmapi|char *ft_strmapi(const char *s, char (*f)(unsigned int, char))| Apply the function f() to each characters in the string s to create a new string (with malloc) resulting of the successive applications of f().|ft_strmapi() returns a new string resulting of the successive applications of f() and NULL if the memory allocations failed.|
+|ft_striteri|void	ft_striteri(char *s, void (*f)(unsigned int, char*))|Apply the function f() to each characters of the string s, passing its index as a first parameter. Each character is transmitted by address to 'f' so it can be modified if necessary.|Nothing|
+|ft_putchar_fd|void	ft_putchar_fd(char c, int fd)|The ft_putchar_fd() function writes the character c on the file descriptor fd.|Nothing|
+|ft_putstr_fd|void	ft_putstr_fd(char *s, int fd)|The ft_putstr_fd() function writes the string s on the file descriptor fd.|Nothing|
+|ft_putendl_fd|void	ft_putendl_fd(char *s, int fd)|ft_putendl_fd() writes the string s, followed by a newline, on the file descriptor fd|Nothing|
+|ft_putnbr_fd|void	ft_putnbr_fd(int n, int fd)|ft_putnbr_fd() writes the int n on the file descriptor fd|Nothing|
+|||||
 ---
 
 
