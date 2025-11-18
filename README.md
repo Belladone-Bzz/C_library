@@ -17,12 +17,9 @@ The aim of this project was to help me understand how the libc library functions
 
 To use the libft.a library, clone the directory with the command `git clone https://github.com/Belladone-Bzz/C_library.git` in the terminal then go in the directory with the command `cd C_library`.
 
-To compile the code, run `make`. This will create a library called libft.a.
+The library is accompanied by a header file called libft.h, which contains prototypes for all the functions in the library. Every file is situated in the project's root, meaning no directory or hierarchy needs to be handled other than keeping the library together. A Makefile is included along a header file making compilation as simple as `make` or `make all`.
 
-To clean the object files and library, run `make clean` and `make fclean`, respectively.
-
-The library is accompanied by a header file called libft.h, which contains prototypes for all the functions in the library. To use the library in your project, include the header file and link to the library.
-
+Other necessary make rules namely `clean` `fclean` and `re` are included. To clean the object files and library, run `make clean` and `make fclean`, respectively. 
 
 ## :page_facing_up: Functions description
 
@@ -62,7 +59,15 @@ The library is accompanied by a header file called libft.h, which contains proto
 |ft_putstr_fd|void	ft_putstr_fd(char *s, int fd)|The ft_putstr_fd() function writes the string s on the file descriptor fd.|Nothing|
 |ft_putendl_fd|void	ft_putendl_fd(char *s, int fd)|ft_putendl_fd() writes the string s, followed by a newline, on the file descriptor fd|Nothing|
 |ft_putnbr_fd|void	ft_putnbr_fd(int n, int fd)|ft_putnbr_fd() writes the int n on the file descriptor fd|Nothing|
-|||||
+|ft_lstnew|t_list	*ft_lstnew(void *content)|Allocate (with malloc) and return the new element. The member variable 'content' is initialized with the value of the 'content' parameter. The 'next' variable is initialized to NULL.|pointer to the new element.|
+|ft_lstadd_front|void	ft_lstadd_front(t_list **lst, t_list *new)|Add the 'new' element at the front of the list|Nothing|
+|ft_lstsize|int	ft_lstsize(t_list *lst)|Count the number of elements of the list|The size of the list|
+|ft_lstlast|t_list	*ft_lstlast(t_list *lst)|Returns the last element of the list|Pointer to the last element of the list|
+|ft_lstadd_back|void	ft_lstadd_back(t_list **lst, t_list *new)|Add the 'new' element at the end of the list|Nothing|
+|ft_lstdelone|void	ft_lstdelone(t_list *lst, void (*del)(void *))|Free the memory of the element passed as parameter using the 'del' function then free(). The memory of 'next' must not be freed.|Nothing|
+|ft_lstclear|void	ft_lstclear(t_list **lst, void (*del)(void *))| Deletes and free the memory of the element passed as parameter and all the following elements using 'del' and free(). Finally, the initial pointer must be set to NULL.|Nothing|
+|ft_lstiter|void	ft_lstiter(t_list *lst, void (*f)(void *))|Iterate over the list 'lst' and apply the function 'f' to the content of all elements.|Nothing|
+|ft_lstmap|t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))| Iterate over the list 'lst' and apply the function 'f' to the content of each elements. Create a new list resulting of the successive applications of f(). The function 'del' is used to destroy the content of an element if necessary.|Pointer to the new list|
 ---
 
 
