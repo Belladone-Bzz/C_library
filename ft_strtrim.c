@@ -3,7 +3,7 @@
 static int	ft_inside_set(const char *set, char c, int len_set)
 {
 	int	index;
-	
+
 	index = 0;
 	while (index < len_set)
 	{
@@ -20,7 +20,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		len_set;
 	int		len_s;
 	char	*cs1;
-	
+
 	len_set = ft_strlen(set);
 	len_s = ft_strlen(s1);
 	start = 0;
