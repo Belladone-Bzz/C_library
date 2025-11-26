@@ -7,7 +7,7 @@ static int	ft_count_words(const char *s, int c)
 
 	index = 0;
 	count = 0;
-	while (s[index] != '\0')
+	while (s[index])
 	{
 		if (s[index] != c && (index == 0 || s[index - 1] == c))
 			count++;
@@ -43,7 +43,7 @@ static int	ft_str_malloc_copy(char **str_tab, char *s, char c)
 			str_len = 0;
 			while (s[index + str_len] != c && s[index + str_len] != '\0')
 				str_len++;
-			str = (char *)malloc((str_len + 1) * sizeof(char));
+			str = (char *) malloc((str_len + 1) * sizeof(char));
 			if (str == NULL)
 				return (ft_free_malloc(str_tab, str_count));
 			ft_strlcpy(str, s + index, str_len + 1);
@@ -61,11 +61,11 @@ char	**ft_split(const char *s, char c)
 	int		n_words;
 	char	**str_tab;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	n_words = ft_count_words(s, c);
-	str_tab = (char **)malloc((n_words + 1) * sizeof (char *));
-	if (str_tab == NULL)
+	str_tab = (char **) malloc((n_words + 1) * sizeof (char *));
+	if (!str_tab)
 		return (NULL);
 	str_tab[n_words] = NULL;
 	if (!ft_str_malloc_copy(str_tab, (char *)s, c))

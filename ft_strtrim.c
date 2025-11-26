@@ -21,11 +21,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		len_s;
 	char	*cs1;
 
+	if (!s1 || !set)
+		return (NULL);
 	len_set = ft_strlen(set);
 	len_s = ft_strlen(s1);
 	start = 0;
-	if (!s1 || !set)
-		return (NULL);
 	while (ft_inside_set(set, s1[start], len_set) != '\0')
 		start ++;
 	while (ft_inside_set(set, s1[len_s - 1], len_set) != '\0')

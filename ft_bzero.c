@@ -1,11 +1,10 @@
 #include "libft.h"
 
-void	*ft_bzero(void *src, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*csrc;
+	unsigned char	*cs;
 
-	csrc = (unsigned char *)src;
+	cs = (unsigned char *)s;
 	while (n--)
-		csrc[n] = 0;
-	return (csrc);
+		cs[n] = 0;
 }

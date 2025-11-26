@@ -24,7 +24,7 @@ static char	*ft_str_memory(int len)
 {
 	char	*str;
 
-	str = malloc((len + 1) * sizeof(char));
+	str = (char *) malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	return (str);
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		number = -number;
 	}
-	while (number != 0)
+	while (number)
 	{
 		str[str_len - 1] = ((number % 10) + '0');
 		number /= 10;
