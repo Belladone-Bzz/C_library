@@ -17,9 +17,44 @@ The aim of this project was to help me understand how the libc library functions
 
 To use the libft.a library, clone the directory with the command `git clone https://github.com/Belladone-Bzz/C_library.git` in the terminal then go in the directory with the command `cd C_library`.
 
-The library is accompanied by a header file called libft.h, which contains prototypes for all the functions in the library. Every file is situated in the project's root, meaning no directory or hierarchy needs to be handled other than keeping the library together. A Makefile is included along a header file making compilation as simple as `make` or `make all`.
+The library is accompanied by a header file called libft.h, which contains prototypes for all the functions in the library. Every file is situated in the project's root, meaning no directory or hierarchy needs to be handled other than keeping the library together.
 
-Other necessary make rules namely `clean` `fclean` and `re` are included. To clean the object files and library, run `make clean` and `make fclean`, respectively. 
+#### Compilation
+
+The project includes a **Makefile** with the following rules:
+
+```
+make       # Compiles the library and creates libft.a
+make all   # Same as above
+make clean # Removes object files
+make fclean # Removes all generated files including libft.a
+make re    # Recompiles the entire project from scratch
+```
+
+#### Compilation Flags
+
+All source files are compiled with:
+- `-Wall -Wextra -Werror` flags for strict error checking
+- `cc` compiler
+- No relinking on subsequent builds
+
+#### Library Creation
+
+The library is created using the `ar` command (not libtool) and is output as `libft.a` at the repository root.
+
+#### Using the Library
+
+To use libft in other projects:
+
+1. Include the header file in your source:
+   ```c
+   #include "libft.h"
+   ```
+
+2. Link against the library during compilation:
+   ```
+   cc -Wall -Wextra -Werror my_program.c libft.a -o my_program
+   ```
 
 ## :page_facing_up: Functions description
 
