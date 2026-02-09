@@ -8,7 +8,7 @@ SRC +=		ft_itoa.c				ft_atoi.c				ft_toupper.c	\
 			ft_tolower.c			
 
 #*		String and memory iteration and comparison
-SRC +=		ft_memcmp.c				ft_memchr.c				ft_strlen.c		\				
+SRC +=		ft_memcmp.c				ft_memchr.c				ft_strlen.c		\
 			ft_strncmp.c			ft_strchr.c				ft_strrchr.c	\
 			ft_strnstr.c			ft_striteri.c
 
@@ -30,9 +30,11 @@ SRC +=		ft_lstnew.c				ft_lstsize.c			ft_lstlast.c	\
 			ft_lstadd_front.c		ft_lstadd_back.c		ft_lstiter.c	\
 			ft_lstmap.c				ft_lstclear.c			ft_lstdelone.c	\
 
+#*		Directories
+OBJDIR =			obj/
 
 #*		Code and object files
-OBJ = $(SRC:.c=.o)
+OBJ =				$(SRC:.c=.o)
 
 #*		Flags and name
 CFLAGS = 			-Wall -Wextra -Werror
@@ -43,7 +45,8 @@ NAME =				libft.a
 all: $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(addprefix $(OBJDIR),$(OBJ))
+	rm -fd $(OBJDIR)
 
 fclean: clean
 	rm -f $(NAME)
@@ -51,10 +54,14 @@ fclean: clean
 re: fclean $(NAME)
 
 #*		Compilation
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJDIR) $(OBJ)
+	ar rc $(NAME) $(addprefix $(OBJDIR),$(OBJ))
 
 %.o: %.c
-	cc -c $(CFLAGS) $< -o $@
+	cc -c $(CFLAGS) $< -o $(addprefix $(OBJDIR),$@)
+
+#*		Directories
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
 .PHONY:			all, clean, fclean, re
