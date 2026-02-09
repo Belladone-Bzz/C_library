@@ -22,11 +22,11 @@ The library is accompanied by a header file called libft.h, which contains proto
 The project includes a Makefile with the following rules:
 
 ```
-make       # Compiles the library and creates libft.a
-make all   # Same as above
-make clean # Removes object files
+make        # Compiles the library and creates libft.a
+make all    # Same as above
+make clean  # Removes object files
 make fclean # Removes all generated files including libft.a
-make re    # Recompiles the entire project from scratch
+make re     # Recompiles the entire project from scratch
 ```
 All source files are compiled with `-Wall -Wextra -Werror` flags for strict error checking. To compile, use the command `make` to create the `libft.a` library at the root
 
