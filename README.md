@@ -34,15 +34,15 @@ All source files are compiled with `-Wall -Wextra -Werror` flags for strict erro
 
 To use libft in other projects:
 
-1. If you're working in a github repository, you can clone the library with the following command to add it as a submodule :
+**1. If you're working in a github repository, you can clone the library with the following command to add it as a submodule :**
 ```bash
 git submodule add https://github.com/Belladone-Bzz/C_library.git
 ```
-2. Include the header file in your project:
+**2. Include the header file in your project:**
  ```c
  #include "libft.h"
  ```
-3. Execute the provided Makefile to create the libft.a file and include it in your project compilation
+**3. Execute the provided Makefile to create the libft.a file and include it in your project compilation**
 
 ## :page_facing_up: Functions description
 
